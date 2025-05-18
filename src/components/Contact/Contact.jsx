@@ -12,7 +12,7 @@ export default function Contact({ id, name, number, Ondelete }) {
                 </p>
             </div>
 
-            <button className={css.deleteButton} id={id} onClick={Ondelete}>
+            <button className={css.deleteButton} onClick={() => Ondelete(id)}>
                 Delete
             </button>
         </li>

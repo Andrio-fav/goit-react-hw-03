@@ -11,7 +11,7 @@ export default function ContactList({ contacts, onDelete }) {
                 number={number}
                 onDelete={onDelete}
                 />
-            ))}
+            ))};
         </ul>
     )
 }

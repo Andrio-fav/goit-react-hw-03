@@ -23,12 +23,9 @@ export default function App() {
     });
     actions.resetForm();
   }
-
-  function delContact(event) {
-    const id = event.target.id;
-    setContacts((prev) => {
-      return prev.filter((item) => item.id !== id);
-    });
+  
+  function delContact(id) {
+    setContacts(prev => prev.filter(contact => contact.id !== id));
   }
 
   const [filterValue, setFilterValue] = useState('');
@@ -54,7 +51,7 @@ export default function App() {
        <h1>Phonebook</h1>
        <ContactForm handleSubmit={addContact} />
        <SearchBox filterValue={filterValue} onChange={onChange} />
-       <ContactList contacts={filteredContacts} onDelete={onChange}/>
+       <ContactList contacts={filteredContacts} onDelete={delContact} />
     </div>
   )
 }
